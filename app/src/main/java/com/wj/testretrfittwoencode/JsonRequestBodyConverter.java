@@ -35,10 +35,10 @@ public class JsonRequestBodyConverter<T> implements Converter<T, RequestBody> {
     public RequestBody convert(T value) throws IOException {
         //加密
         APIBodyData data = new APIBodyData();
-        Log.i("xiaozhang", "request中传递的json数据：" + value.toString());
-        data.setData(XXTEA.Encrypt(value.toString(), XXTEA.KEY));
+        Log.e("xiaozhang", "request中传递的json数据：" + value.toString());
+        data.setData(CryptoUtils.EncryptWithNoPadding(value.toString()));
         String postBody = gson.toJson(data); //对象转化成json
-        Log.i("xiaozhang", "转化后的数据：" + postBody);
+        Log.e("xiaozhang", "转化后的数据：" + postBody);
         return RequestBody.create(MEDIA_TYPE, postBody);
     }
 

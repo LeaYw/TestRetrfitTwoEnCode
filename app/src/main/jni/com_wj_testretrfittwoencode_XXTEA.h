@@ -12,7 +12,7 @@ extern "C" {
  * Method:    getNativeString
  * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getNativeString
+JNIEXPORT jstring JNICALL Java_com_wj_testretrfittwoencode_CryptoUtils_getNativeString
   (JNIEnv *, jclass);
 
 /*
@@ -20,7 +20,7 @@ JNIEXPORT jstring JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getNativeString
  * Method:    getKey
  * Signature: ()[B
  */
-JNIEXPORT jbyteArray JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getKey
+JNIEXPORT jbyteArray JNICALL Java_com_wj_testretrfittwoencode_CryptoUtils_getKey
   (JNIEnv *, jclass);
 
 /*
@@ -28,7 +28,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getKey
  * Method:    getIv
  * Signature: ()[B
  */
-JNIEXPORT jbyteArray JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getIv
+JNIEXPORT jbyteArray JNICALL Java_com_wj_testretrfittwoencode_CryptoUtils_getIv
   (JNIEnv *, jclass);
 
 #ifdef __cplusplus

@@ -39,8 +39,8 @@ public class JsonResponseBodyConverter<T> implements Converter<ResponseBody, T> 
         String response = responseBody.string();
 
         String strResult = response.substring(1, response.length() - 1);
-        String result = XXTEA.Decrypt(strResult, XXTEA.KEY);//解密
-        Log.i("xiaozhang", "解密的服务器数据：" + result);
+        String result = CryptoUtils.DecryptWithNoPadding(strResult);//解密
+        Log.e("xiaozhang", "解密的服务器数据：" + result);
         User pageBean = mGson.fromJson(result, User.class);
         return (T) pageBean;
 

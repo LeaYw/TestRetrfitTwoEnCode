@@ -8,15 +8,13 @@
  * Method:    getStringFormC
  * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_wj_testretrfittwoencode_XXTEA_getNativeString
+JNIEXPORT jstring JNICALL Java_com_wj_testretrfittwoencode_CryptoUtils_getNativeString
         (JNIEnv *env, jobject obj){
     return (*env)->NewStringUTF(env,"这里是来自c的string");
 }
 const char keyValue[] = {
         21, 25, 21, -45, 25, 98, -55, -45, 10, 35, -45, 35,
-        26, -5, 25, -65, -78, -99, 85, 45, -5, 10, -0, 11,
-        -35, -48, -98, 65, -32, 14, -67, 25, 36, -56, -45, -5,
-        12, 15, 35, -15, 25, -14, 62, -25, 33, -45, 55, 12, -8,
+        26, -5, 25, -65, -78, -99, 85, 45, -5, 10, -0, 11
 };
 
 const char iv[] =  {    //16 bit
@@ -25,7 +23,7 @@ const char iv[] =  {    //16 bit
 };
 
 
-jbyteArray Java_com_wj_testretrfittwoencode_XXTEA_getKey(JNIEnv *env, jobject obj)
+jbyteArray Java_com_wj_testretrfittwoencode_CryptoUtils_getKey(JNIEnv *env, jobject obj)
 {
 
     jbyteArray kvArray = (*env)->NewByteArray(env, sizeof(keyValue));
@@ -42,7 +40,7 @@ jbyteArray Java_com_wj_testretrfittwoencode_XXTEA_getKey(JNIEnv *env, jobject ob
     return kvArray;
 }
 
-jbyteArray Java_com_wj_testretrfittwoencode_XXTEA_getIv(JNIEnv *env, jobject obj)
+jbyteArray Java_com_wj_testretrfittwoencode_CryptoUtils_getIv(JNIEnv *env, jobject obj)
 {
 
     jbyteArray ivArray = (*env)->NewByteArray(env, sizeof(iv));

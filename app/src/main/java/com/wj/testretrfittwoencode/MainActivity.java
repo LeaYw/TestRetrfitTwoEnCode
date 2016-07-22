@@ -25,7 +25,14 @@ public class MainActivity extends AppCompatActivity {
         initData();
 //        initRequest();
         initRetrofit();
-        ((TextView)findViewById(R.id.hello)).setText(XXTEA.getNativeString());
+        String data = "12321312312";
+        String encrypt = CryptoUtils.EncryptWithPadding(data);
+        String decrypt = CryptoUtils.DecryptWithPadding(encrypt);
+
+        ((TextView) findViewById(R.id.hello)).setText(
+                data + "\n"
+                + "加密后:" + encrypt + "\n"
+                + "解密后:" + decrypt);
     }
 
 //    private void initRequest() {
